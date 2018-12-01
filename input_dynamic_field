@@ -1,0 +1,24 @@
+ <?php
+
+ $mark=explode(',', $catid_data['subcategory']);//what will do here
+
+        while($subcategory=mysqli_fetch_array($subcat)){
+			$selected = (in_array($subcategory['id'],$mark))?'selected="selected"':'';
+			/*if(in_array($subcategory['id'],$mark))
+			{
+				$selected = "selected='selected'";
+			}
+			else
+			{
+				$selected = '';
+			}*/
+
+  ?>
+    <option <?php echo $selected; ?> value="<?php echo $subcategory['id'];?>"><?php echo $subcategory['category'];?>‎ </option>
+		<?php }?>
+----------------------------------------
+checked value code
+
+ <input class="w3-radio tabinput5" <?php echo ($catid_data['budget']=="Fixed")?'checked="checked"':''; ?> name="budget" value="Fixed" type="radio" >
+	  <label style="font-weight:normal; margin:0px;">Fixed price project</label>		
+	  
